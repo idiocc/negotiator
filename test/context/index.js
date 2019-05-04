@@ -15,8 +15,8 @@ function createRequest(headers) {
 }
 
 const Context = {
-  getNegotiator(acceptCharset) {
-    return new Negotiator(createRequest({ 'Accept-Charset': acceptCharset }))
+  getNegotiator(accept, name = 'Charset') {
+    return new Negotiator(createRequest({ [`Accept-${name}`]: accept }))
   },
 }
 
