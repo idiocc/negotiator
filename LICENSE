@@ -2,6 +2,15 @@ MIT License
 
 Copyright (c) 2019 Art Deco Code Limited
 
+ + Upgrade to ES6 Module.
+ + Zoroaster tests.
+
+Original Work
+
+Copyright (c) 2012-2014 Federico Romero
+Copyright (c) 2012-2014 Isaac Z. Schlueter
+Copyright (c) 2014-2015 Douglas Christopher Wilson
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
