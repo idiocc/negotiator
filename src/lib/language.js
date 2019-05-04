@@ -8,10 +8,10 @@ function parseAcceptLanguage(accept) {
   var accepts = accept.split(',')
 
   for (var i = 0, j = 0; i < accepts.length; i++) {
-    var langauge = parseLanguage(accepts[i].trim(), i)
+    var language = parseLanguage(accepts[i].trim(), i)
 
-    if (langauge) {
-      accepts[j++] = langauge
+    if (language) {
+      accepts[j++] = language
     }
   }
 
@@ -25,7 +25,6 @@ function parseAcceptLanguage(accept) {
  * Parse a language from the Accept-Language header.
  * @private
  */
-
 function parseLanguage(str, i) {
   var match = simpleLanguageRegExp.exec(str)
   if (!match) return null
@@ -39,19 +38,13 @@ function parseLanguage(str, i) {
   var q = 1
   if (match[3]) {
     var params = match[3].split(';')
-    for (var i = 0; i < params.length; i ++) {
-      var p = params[i].split('=')
-      if (p[0] === 'q') q = parseFloat(p[1])
+    for (var j = 0; j < params.length; j++) {
+      var p = params[j].split('=')
+      if (p[0] == 'q') q = parseFloat(p[1])
     }
   }
 
-  return {
-    prefix: prefix,
-    suffix: suffix,
-    q: q,
-    i: i,
-    full: full,
-  }
+  return { prefix, suffix, q, i, full }
 }
 
 /**
@@ -101,8 +94,6 @@ function specify(language, spec, index) {
 
 /**
  * Get the preferred languages from an Accept-Language header.
- * @param {string} accept
- * @param {Array<string>} provided
  * @public
  */
 export default function preferredLanguages(accept, provided) {
@@ -142,6 +133,7 @@ function compareSpecs(a, b) {
 function getFullLanguage(spec) {
   return spec.full
 }
+
 /**
  * Check if a spec has any quality.
  * @private
