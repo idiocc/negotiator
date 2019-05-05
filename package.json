@@ -14,7 +14,7 @@
     "doc": "NODE_DEBUG=doc doc -o README.md",
     "depack": "depack src/depack -o depack/depack.js -l -a -p -O 2017 --externs types/externs.js",
     "b": "alamode src -o build -s",
-    "d": "typal types/externs.js types/index.js",
+    "d": "typal types/externs.js",
     "build": "yarn-s d b doc",
     "e": "alanode"
   },

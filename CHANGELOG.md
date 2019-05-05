@@ -3,6 +3,7 @@
 ### [1.0.1](https://github.com/idiocc/negotiator/compare/v1.0.0...v1.0.1)
 
 - [fix] Remove extra `@typedef` import.
+- [doc] Remove `types/index.js`.
 
 ### [1.0.0](https://github.com/idiocc/negotiator/compare/v0.0.0-pre...v1.0.0)
 
