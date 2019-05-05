@@ -71,7 +71,7 @@ function getLanguagePriority(language, accepted, index) {
  */
 
 function specify(language, spec, index) {
-  var p = parseLanguage(language)
+  var p = parseLanguage(language, undefined)
   if (!p) return null
   var s = 0
   if(spec.full.toLowerCase() === p.full.toLowerCase()){

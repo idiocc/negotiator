@@ -1,10 +1,28 @@
-<types namespace="_@goa/negotiator">
-  <type name="Config" desc="Options for the program.">
-    <prop boolean name="shouldRun" default="true">
-      A boolean option.
+<types namespace="_goa">
+  <type interface name="Negotiator" desc="HTTP Content Negotiation In ES6.">
+    <prop type="function(!Array<string>=): string" name="charset">
+      Negotiated charset.
     </prop>
-    <prop string name="text">
-      A text to return.
+    <prop type="function(!Array<string>=): !Array<string>" name="charsets">
+      Negotiated charsets.
+    </prop>
+    <prop type="function(!Array<string>=): string" name="encoding">
+      Negotiated encoding.
+    </prop>
+    <prop type="function(!Array<string>=): !Array<string>" name="encodings">
+      Negotiated encodings.
+    </prop>
+    <prop type="function(!Array<string>=): string" name="language">
+      Negotiated language.
+    </prop>
+    <prop type="function(!Array<string>=): !Array<string>" name="languages">
+      Negotiated languages.
+    </prop>
+    <prop type="function(!Array<string>=): string" name="mediaType">
+      Negotiated mediaType.
+    </prop>
+    <prop type="function(!Array<string>=): !Array<string>" name="mediaTypes">
+      Negotiated mediaTypes.
     </prop>
   </type>
 </types>

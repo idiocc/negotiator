@@ -111,8 +111,8 @@ export default function preferredCharsets(accept, provided) {
 
 /**
  * Compare two specs.
- * @param {{ i: number, q: number, charset: string, o: number }} a
- * @param @param {{ i: number, q: number, charset: string, o: number }} b
+ * @param {{ i: number, q: number, charset: string, o: number, s: number }} a
+ * @param {{ i: number, q: number, charset: string, o: number, s: number }} b
  * @private
  */
 function compareSpecs(a, b) {

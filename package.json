@@ -1,8 +1,8 @@
 {
   "name": "@goa/negotiator",
   "version": "0.0.0-pre",
-  "description": "[fork] HTTP Content Negotiation In ES6.",
-  "main": "build/index.js",
+  "description": "[fork] HTTP Content Negotiation In ES6 Optimised With Google Closure Compiler.",
+  "main": "depack/index.js",
   "module": "src/index.js",
   "scripts": {
     "t": "zoroaster -a",
@@ -12,17 +12,16 @@
     "test-build": "ALAMODE_ENV=test-build yarn test",
     "lint": "eslint .",
     "doc": "NODE_DEBUG=doc doc -o README.md",
+    "depack": "depack src/depack -o depack/depack.js -l -a -p -O 2017 --externs externs.js",
     "b": "alamode src -o build -s",
-    "d": "yarn-s d1 externs",
-    "d1": "typal src -c",
-    "externs": "typal externs.js -e",
+    "d": "typal types/externs.js types/index.js",
     "build": "yarn-s d b doc",
     "e": "alanode"
   },
   "files": [
-    "build",
+    "depack",
     "src",
-    "externs.js"
+    "types/externs.js"
   ],
   "externs": "externs.js",
   "repository": {

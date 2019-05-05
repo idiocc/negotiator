@@ -93,7 +93,7 @@ function getMediaTypePriority(type, accepted, index) {
  */
 
 function specify(type, spec, index) {
-  var p = parseMediaType(type)
+  var p = parseMediaType(type, undefined)
   var s = 0
 
   if (!p) {

@@ -15,7 +15,7 @@ function parseAcceptEncoding(accept) {
 
     if (encoding) {
       accepts[j++] = encoding
-      hasIdentity = hasIdentity || specify('identity', encoding)
+      hasIdentity = hasIdentity || specify('identity', encoding, undefined)
       minQuality = Math.min(minQuality, encoding.q || 1)
     }
   }
