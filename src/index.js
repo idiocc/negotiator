@@ -52,16 +52,11 @@ export default class Negotiator {
 }
 
 /**
- * @suppress {nonStandardJsDocs}
- * @typedef {import('http').IncomingMessage} http.IncomingMessage
- */
-
-/**
  * @license MIT
  * Copyright(c) 2012 Federico Romero
  * Copyright(c) 2012-2014 Isaac Z. Schlueter
  * Copyright(c) 2015 Douglas Christopher Wilson
- * https://www.npmjs.com/package/negotiator
+ * https://npmjs.org/negotiator
  */
 
 /**
