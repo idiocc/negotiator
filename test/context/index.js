@@ -6,7 +6,7 @@ function createRequest(headers) {
   }
 
   if (headers) {
-    Object.keys(headers).forEach(function (key) {
+    Object.keys(headers).forEach((key) => {
       request.headers[key.toLowerCase()] = headers[key]
     })
   }
@@ -15,8 +15,9 @@ function createRequest(headers) {
 }
 
 const Context = {
-  getNegotiator(accept, name = 'Charset') {
-    return new Negotiator(createRequest({ [`Accept-${name}`]: accept }))
+  getNegotiator(accept, name = '') {
+    if (name) name = `-${name}`
+    return new Negotiator(createRequest({ [`Accept${name}`]: accept }))
   },
 }
 
