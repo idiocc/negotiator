@@ -1,6 +1,6 @@
 {
   "name": "@goa/negotiator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "[fork] HTTP Content Negotiation In ES6 Optimised With Google Closure Compiler.",
   "main": "depack/index.js",
   "module": "src/index.js",
