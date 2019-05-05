@@ -12,7 +12,7 @@
     "test-build": "ALAMODE_ENV=test-build yarn test",
     "lint": "eslint .",
     "doc": "NODE_DEBUG=doc doc -o README.md",
-    "depack": "depack src/depack -o depack/depack.js -l -a -p -O 2017 --externs externs.js",
+    "depack": "depack src/depack -o depack/depack.js -l -a -p -O 2017 --externs types/externs.js",
     "b": "alamode src -o build -s",
     "d": "typal types/externs.js types/index.js",
     "build": "yarn-s d b doc",
@@ -23,7 +23,7 @@
     "src",
     "types/externs.js"
   ],
-  "externs": "externs.js",
+  "externs": "types/externs.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/idiocc/negotiator.git"
@@ -39,6 +39,7 @@
   },
   "homepage": "https://github.com/idiocc/negotiator#readme",
   "devDependencies": {
+    "@rqt/aqt": "^1.2.5",
     "alamode": "^2.1.2",
     "documentary": "^1.27.1",
     "eslint-config-artdeco": "1.0.1",

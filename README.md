@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/%40goa%2Fnegotiator.svg)](https://npmjs.org/package/@goa/negotiator)
 
-`@goa/negotiator` is a [fork](https://github.com/jshttp/negotiator) of HTTP Content Negotiation In ES6 And Optimised With _Google Closure Compiler_.
+`@goa/negotiator` is a [fork](https://github.com/jshttp/negotiator) of HTTP Content Negotiation In ES6 And Optimised With A JavaScript Compiler For The Best Performance.
 
 The original module has been updated to be used in [`@goa/koa`](https://artdecocode.com/goa/): _Koa_ web server compiled with _Google Closure Compiler_ using [**Depack**](https://artdecocode.com/depack/) into a single file library (0 dependencies).
 
@@ -41,17 +41,65 @@ Creates a new instance based on the request from the client.
 
 ```js
 /* alanode example/ */
-import negotiator from '@goa/negotiator'
+import aqt from '@rqt/aqt'
+import { createServer } from 'http'
+import Negotiator from '@goa/negotiator'
 
-(async () => {
-  const res = await negotiator({
-    text: 'example',
+const s = createServer((message, response) => {
+  const n = new Negotiator(message)
+
+  const availableEncodings = ['identity', 'gzip']
+  console.log('encodings', n.encodings())
+  console.log('available encodings', n.encodings(availableEncodings))
+  console.log('encoding', n.encoding(availableEncodings), '\n')
+
+  const availableLanguages = ['en', 'es', 'fr']
+  console.log('languages', n.languages())
+  console.log('available languages', n.languages(availableLanguages))
+  console.log('language', n.language(availableLanguages), '\n')
+
+  const availableCharsets = ['utf-8', 'iso-8859-1', 'iso-8859-5']
+  console.log('charsets', n.charsets())
+  console.log('available charsets', n.charsets(availableCharsets))
+  console.log('charset', n.charset(availableCharsets), '\n')
+
+  const availableMediaTypes = ['text/html', 'text/plain', 'application/json']
+  console.log('media types', n.mediaTypes())
+  console.log('available media types', n.mediaTypes(availableMediaTypes))
+  console.log('media type', n.mediaType(availableMediaTypes))
+
+  response.end()
+})
+
+s.listen(0, async () => {
+  const url = `http://localhost:${s.address().port}`
+  await aqt(url, {
+    headers: {
+      'accept-encoding': 'gzip, compress;q=0.2, identity;q=0.5',
+      'accept-charset': 'utf-8, iso-8859-1;q=0.8, utf-7;q=0.2',
+      'accept-language': 'en;q=0.8, es, pt',
+      accept: 'text/html, application/*;q=0.2, image/jpeg;q=0.8',
+    },
   })
-  console.log(res)
-})()
+  s.close()
+})
 ```
 ```
+encodings [ 'gzip', 'deflate', 'identity' ]
+available encodings [ 'gzip', 'identity' ]
+encoding gzip 
 
+languages [ 'es', 'pt', 'en' ]
+available languages [ 'es', 'en' ]
+language es 
+
+charsets [ 'utf-8', 'iso-8859-1', 'utf-7' ]
+available charsets [ 'utf-8', 'iso-8859-1' ]
+charset utf-8 
+
+media types [ 'text/html', 'image/jpeg', 'application/*' ]
+available media types [ 'text/html', 'application/json' ]
+media type text/html
 ```
 
 __<a name="type-_goanegotiator">`_goa.Negotiator`</a>__: HTTP Content Negotiation In ES6.

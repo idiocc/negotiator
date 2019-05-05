@@ -2,7 +2,7 @@ import preferredCharsets from './lib/charset'
 import preferredEncodings from './lib/encoding'
 import preferredLanguages from './lib/language'
 import preferredMediaTypes from './lib/mediaType'
-import 'http'
+import * as http from 'http' // eslint-disable-line
 
 /**
  * @implements {_goa.Negotiator}
