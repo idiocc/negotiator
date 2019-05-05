@@ -30,7 +30,13 @@
   },
   "keywords": [
     "negotiator",
-    "goa"
+    "goa",
+    "http",
+    "content negotiation",
+    "accept",
+    "accept-language",
+    "accept-encoding",
+    "accept-charset"
   ],
   "author": "Anton <anton@adc.sh>",
   "license": "MIT",
