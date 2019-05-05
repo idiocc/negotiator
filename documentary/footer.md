@@ -4,8 +4,10 @@
 
 ## Copyright
 
-(c) [Idio][1] 2019
+The original programming work, documentation and NPM package by [Federico Romero, Isaac Z. Schlueter, Douglas Christopher Wilson](https://github.com/jshttp/negotiator).
 
-[1]: https://idio.cc
+---
+
+<IdioFooter />
 
 %~ -1%

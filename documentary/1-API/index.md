@@ -3,23 +3,26 @@
 The package is available by importing its default function:
 
 ```js
-import negotiator from '@goa/negotiator'
+import Negotiator from '@goa/negotiator'
 ```
 
 %~%
 
-```## negotiator
+## class Negotiator
+
+Instances of this class will allow to negotiate languages, charsets, media types and encodings.
+
+```## constructor => Negotiator
 [
-  ["arg1", "string"],
-  ["arg2?", "boolean"]
+  ["request", "IncomingMessage"]
 ]
 ```
 
-Call this function to get the result you want.
-
-%TYPEDEF types/index.xml%
+Creates a new instance based on the request from the client.
 
 %EXAMPLE: example, ../src => @goa/negotiator%
 %FORK example%
+
+%TYPEDEF types/index.xml%
 
 %~%

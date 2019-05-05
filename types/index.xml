@@ -1,28 +1,28 @@
 <types namespace="_goa">
   <type interface name="Negotiator" desc="HTTP Content Negotiation In ES6.">
     <prop type="function(!Array<string>=): string" name="charset">
-      Negotiated charset.
+      Returns the most preferred charset from the client.
     </prop>
     <prop type="function(!Array<string>=): !Array<string>" name="charsets">
-      Negotiated charsets.
+      Returns an array of preferred charsets ordered by the client preference.
     </prop>
     <prop type="function(!Array<string>=): string" name="encoding">
-      Negotiated encoding.
+      Returns the most preferred encoding from the client.
     </prop>
     <prop type="function(!Array<string>=): !Array<string>" name="encodings">
-      Negotiated encodings.
+      Returns an array of preferred encodings ordered by the client preference.
     </prop>
     <prop type="function(!Array<string>=): string" name="language">
-      Negotiated language.
+      Returns the most preferred language from the client.
     </prop>
     <prop type="function(!Array<string>=): !Array<string>" name="languages">
-      Negotiated languages.
+      Returns an array of preferred languages ordered by priority from a list of available languages.
     </prop>
     <prop type="function(!Array<string>=): string" name="mediaType">
-      Negotiated mediaType.
+      Returns the most preferred media type from the client.
     </prop>
     <prop type="function(!Array<string>=): !Array<string>" name="mediaTypes">
-      Negotiated mediaTypes.
+      Returns an array of preferred media types ordered by priority from a list of available media types.
     </prop>
   </type>
 </types>
